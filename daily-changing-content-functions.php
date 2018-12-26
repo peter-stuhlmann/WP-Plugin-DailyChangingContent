@@ -15,3 +15,8 @@ function dailyChangigContent_enqueue_scripts() {
  	wp_enqueue_script( 'daily-changig-content-script', plugin_dir_url( __FILE__ ) . '/assets/js/script.js', '20181226' );
 }
 add_action( 'wp_enqueue_scripts', 'dailyChangigContent_enqueue_scripts' );
+
+
+// Shortcode also usable in Sidebar
+
+add_filter( 'widget_text', 'do_shortcode' );
