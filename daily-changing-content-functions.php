@@ -20,3 +20,15 @@ add_action( 'wp_enqueue_scripts', 'dailyChangigContent_enqueue_scripts' );
 // Shortcode also usable in Sidebar
 
 add_filter( 'widget_text', 'do_shortcode' );
+
+
+// Daily changing content
+
+function dailyChangingContent_output() {
+	$a = shortcode_atts( array (
+        'prst' => '<script>document.write(DailyChangingContent)</script>',
+    ), $atts );
+    return  $a['prst'] ;
+} 
+
+add_shortcode('dailychangingcontent', 'dailyChangingContent_output');
